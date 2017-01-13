@@ -1,5 +1,5 @@
-const DefinePlugin = require('webpack/lib/DefinePlugin')
-const { ignoreLoader, rel } = require('./lib')
+var DefinePlugin = require('webpack/lib/DefinePlugin')
+var { ignoreLoader, rel } = require('./lib')
 
 module.exports = {
   context: rel('src'),

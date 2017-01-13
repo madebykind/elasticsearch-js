@@ -201,7 +201,7 @@ module.exports = function (branch, done) {
 
       var allParams = _.extend({}, def.url.params, def.url.parts);
       _.forOwn(allParams, (paramSpec, paramName) => {
-        const toMerge = _.get(overrides, ['mergeConcatParams', name, paramName])
+        var toMerge = _.get(overrides, ['mergeConcatParams', name, paramName])
         if (toMerge) {
           _.mergeWith(paramSpec, toMerge, (dest, src) => {
             if (_.isArray(dest) && _.isArray(src)) {
@@ -211,7 +211,7 @@ module.exports = function (branch, done) {
         }
 
         if (paramSpec.options) {
-          const invalidOpts = paramSpec.options.some(opt => typeof opt !== 'string')
+          var invalidOpts = paramSpec.options.some(opt => typeof opt !== 'string')
           if (invalidOpts) throw new Error(`${name} has options that are not strings...`)
         }
       })

@@ -192,7 +192,7 @@ _.each(statusCodes, function createStatusCodeError(tuple) {
 
 
 function prettyPrint(data) {
-  const path = []
+  var path = []
   return (function print(v) {
     if (typeof v === 'object') {
       if (path.indexOf(v) > -1) return '[circular]'

@@ -1,5 +1,5 @@
 
-const rel = require('path').resolve.bind(null, __dirname, '..')
+var rel = require('path').resolve.bind(null, __dirname, '..')
 
 function ignoreLoader(ignores) {
   return {
